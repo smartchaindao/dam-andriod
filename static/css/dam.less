@@ -1,0 +1,103 @@
+.dam-hd {
+	font-size: 32rpx;
+	text-transform: uppercase;
+	text-align: center;
+	padding: 40rpx 20vw 30rpx;
+	&.full{
+		padding-left: 4vw;
+		padding-right: 4vw;
+	}
+}
+.dam-bd {
+	.vbox;
+	margin: 0 30rpx;
+	padding: 0 40rpx 40rpx;
+	.tip {
+		font-size: 28rpx;
+		padding: 26rpx 0 10rpx;
+		position: relative;
+	}
+	input {
+		.lb;
+		height: 70rpx;
+		margin-bottom: 20rpx;
+		font-size:20rpx;
+	}
+	.err {
+		margin-bottom: 36rpx;
+	}
+}
+
+
+.dam-txt {
+	padding: 0 10vw 60rpx;
+	font-size: 22rpx;
+	color: #999;
+	text-transform: uppercase;
+	line-height: 1.6;
+}
+.dam-list {
+	.vbox;
+	margin: 0 30rpx;
+	padding: 40rpx 40rpx 0;
+	display: flex;
+	flex-wrap: wrap;
+	font-size: 28rpx;
+	justify-content: space-between;
+	
+	.item {
+		width: 240rpx;
+		margin-bottom: 46rpx;
+	}
+}
+.dam-list + .err{
+	padding: 20rpx 66rpx 0;
+}
+.dam-list-input{
+	padding-top: 20rpx;
+	padding-bottom: 30rpx;
+	margin-bottom:46rpx;
+	.item{
+		margin-bottom:20rpx;
+		display: flex;
+		align-items: center;
+		line-height: 1;
+	}
+	input{
+		.lb;
+		
+		height: 70rpx;
+		display: block;
+		.fg1;
+		 margin-left:10rpx;
+	}
+}
+.agree-box{
+	position: relative;
+	padding-left: 40rpx;
+	.xs;
+	&::before{
+		content:'';display: block;position: absolute;
+		.wh2(22);
+		border-radius: 50%;
+		border: 1px solid #d0d0d0;
+		left:0;top: 6rpx;
+		.bbox;
+	}
+	&.active{
+		&::before{
+			border:6rpx solid @blue;
+		}
+	}
+	
+}
+.eye{
+	.wh2(50);
+	.right;
+	top: 60%
+}
+.dam-vbtn {
+	.vbtn;
+	margin: 40rpx auto 0;
+	width: 606rpx;
+}

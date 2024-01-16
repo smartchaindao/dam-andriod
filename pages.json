@@ -1,0 +1,341 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/home/index",
+			"style": {
+				"navigationBarTitleText": "Data Assets Manager",
+				"enablePullDownRefresh": true,
+				"h5": {
+					"titleNView": {
+						"buttons": [{
+							"fontSize": "22px",
+							"fontSrc": "/static/css/iconfont.ttf",
+							"text": "\ue611",
+							"float": "left",
+							"width": "34px"
+						}, {
+							"width": "38px",
+							"textAlign":"left",
+							"fontSize": "20px",
+							"fontSrc": "/static/css/iconfont.ttf",
+							"text": "\ue606"
+						}]
+					}
+				},
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"fontSize": "20px",
+							"fontSrc": "/static/css/iconfont.ttf",
+							"text": "\ue611",
+							"float": "left",
+							"textAlign": "center"
+						}, {
+							"width": "46px",
+							"textAlign":"left",
+							"fontSize": "20px",
+							"fontSrc": "/static/css/iconfont.ttf",
+							"text": "\ue606"
+						}]
+					}
+				}
+			}
+		},
+		{
+			"path": "pages/a"
+			
+				
+		},{
+			"path": "pages/backup/backup_2",
+			"style": {
+				"navigationBarTitleText": "Backup"
+			}
+		}, {
+			"path": "pages/backup/backup_3",
+			"style": {
+				"navigationBarTitleText": "Backup"
+			}
+		}, {
+			"path": "pages/backup/backup_1",
+			"style": {
+				"navigationBarTitleText": "Backup"
+			}
+		},{
+			"path": "pages/backup/backup_1_key",
+			"style": {
+				"navigationBarTitleText": "Show Private Key",
+				"h5": {
+					"titleNView": {
+						"buttons": [{
+							"width": "50px",
+							"fontSize": "14px",
+							"text": "cancel",
+							"color": "#999"
+						}]
+					}
+				},
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"width": "50px",
+							"fontSize": "14px",
+							"text": "cancel",
+							"color": "#999"
+						}]
+					}
+				}
+			}
+		},  {
+			"path": "pages/login/import_key",
+			"style": {
+				"navigationBarTitleText": "DAM",
+				"h5": {
+					"titleNView": {
+						"buttons": [{
+							"width": "50px",
+							"fontSize": "14px",
+							"text": "cancel",
+							"color": "#999"
+						}]
+					}
+				}/*,
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"width": "50px",
+							"fontSize": "14px",
+							"text": "cancel",
+							"color": "#999"
+						}]
+					}
+				}*/
+			}
+		},  {
+			"path": "pages/login/import_word",
+			"style": {
+				"navigationBarTitleText": "DAM",
+				"h5": {
+					"titleNView": {
+						"buttons": [{
+							"width": "50px",
+							"fontSize": "14px",
+							"text": "cancel",
+							"color": "#999"
+						}]
+					}
+				}/*,
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"width": "50px",
+							"fontSize": "14px",
+							"text": "cancel",
+							"color": "#999"
+						}]
+					}
+				}*/
+			}
+		},{
+			"path": "pages/login/login_3",
+			"style": {
+				"navigationBarTitleText": "DAM",
+				"h5": {
+					"titleNView": {
+						"buttons": [{
+							"width": "50px",
+							"fontSize": "14px",
+							"text": "cancel",
+							"color": "#999"
+						}]
+					}
+				},
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"width": "50px",
+							"fontSize": "14px",
+							"text": "cancel",
+							"color": "#999"
+						}]
+					}
+				}
+			}
+		},{
+			"path": "pages/login/login_2_1",
+			"style": {
+				"navigationBarTitleText": "DAM",
+				"h5": {
+					"titleNView": {
+						"buttons": [{
+							"width": "50px",
+							"fontSize": "14px",
+							"text": "cancel",
+							"color": "#999"
+						}]
+					}
+				},
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"width": "50px",
+							"fontSize": "14px",
+							"text": "cancel",
+							"color": "#999"
+						}]
+					}
+				}
+			}
+		},{
+			"path": "pages/login/login_2",
+			"style": {
+				"navigationBarTitleText": "DAM",
+				"h5": {
+					"titleNView": {
+						"buttons": [{
+							"width": "50px",
+							"fontSize": "14px",
+							"text": "cancel",
+							"color": "#999"
+						}]
+					}
+				},
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"width": "50px",
+							"fontSize": "14px",
+							"text": "cancel",
+							"color": "#999"
+						}]
+					}
+				}
+			}
+		},{
+			"path": "pages/login/login",
+			"style": {
+				"navigationBarTitleText": "DAM",
+				"h5": {
+					"titleNView": {
+						"buttons": [{
+							"width": "50px",
+							"fontSize": "14px",
+							"text": "cancel",
+							"color": "#999"
+						}]
+					}
+				},
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"width": "50px",
+							"fontSize": "14px",
+							"text": "cancel",
+							"color": "#999"
+						}]
+					}
+				}
+			}
+		},{
+			"path": "pages/login/sign",
+			"style": {
+				"navigationBarTitleText": "DAM"
+			}
+		},{
+			"path": "pages/send/form_2",
+			"style": {
+				"navigationBarTitleText": "Send to",
+				"h5": {
+					"titleNView": {
+						"buttons": [{
+							"width": "50px",
+							"fontSize": "14px",
+							"text": "cancel",
+							"color": "#999"
+						}]
+					}
+				},
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"width": "50px",
+							"fontSize": "14px",
+							"text": "cancel",
+							"color": "#999"
+						}]
+					}
+				}
+			}
+		},{
+			"path": "pages/setting/index",
+			"style": {
+				"navigationBarTitleText": "settings"
+			}
+		},{
+			"path": "pages/send/form",
+			"style": {
+				"navigationBarTitleText": "Send to"
+			}
+		},{
+			"path": "pages/dam/private_key",
+			"style": {
+				"navigationBarTitleText": "Show Private Key"
+			}
+		},{
+			"path": "pages/dam/private_key_2",
+			"style": {
+				"navigationBarTitleText": "Show Private Key"
+			}
+		},{
+			"path": "pages/reveal/reveal_secret_words_info",
+			"style": {
+				"navigationBarTitleText": "Reveal Secret Words"
+			}
+		}, {
+			"path": "pages/reveal/reveal_secret_words",
+			"style": {
+				"navigationBarTitleText": "Reveal Secret Words"
+			}
+		}, {
+			"path": "pages/device/index",
+			"style": {
+				"navigationBarTitleText": "device"
+			}
+		}, {
+			"path": "pages/popup/popup",
+			"style": {
+				"navigationBarTitleText": "Change Password"
+			}
+		}, {
+			"path": "pages/change_password/change_password_1",
+			"style": {
+				"navigationBarTitleText": "Change Password"
+			}
+		},{
+			"path": "pages/change_password/change_password_2",
+			"style": {
+				"navigationBarTitleText": "Change Password"
+			}
+		}, {
+			"path": "pages/transactions/index",
+			"style": {
+				"navigationBarTitleText": "Transactions"
+			}
+		}, {
+			"path": "pages/dam/set",
+			"style": {
+				"navigationBarTitleText": "DAM"
+			}
+		}, {
+			"path": "pages/dam/index",
+			"style": {
+				"navigationBarTitleText": "DAM"
+			}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "app",
+		"navigationBarBackgroundColor": "#ffffff",
+		"backgroundColor": "#f3f6f7"
+	}
+}
