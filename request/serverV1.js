@@ -50,3 +50,57 @@ export const trans = (data) => {
 		data
 	})
 }
+// hpc=>wusdt 汇率
+export const getRate = (data) => {
+	return request({
+		url: "/clientDam/flash/getRate",
+		method: "get",
+		data
+	})
+}
+
+
+// 提交hpc=>wusdt
+export const savaConvertRescord = (data) => {
+	return request({
+		url: "/clientDam/flash/savaConvertRescord",
+		method: "put",
+		data
+	})
+}
+
+
+// 更新hpc=>wusdt
+export const updateConvertRescord = (data) => {
+	return request({
+		url: "/clientDam/flash/updateConvertRescord",
+		method: "post",
+		data
+	})
+}
+// 手续费用
+export const getFeesInfo = (data) => {
+	return request({
+		url: "/clientDam/flash/getFeesInfo",
+		method: "get",
+		data
+	})
+}
+
+
+// 保存transfer
+export const savaTransferRescord = (data) => {
+	return request({
+		url: "/clientDam/flash/savaTransferRescord",
+		method: "put",
+		data
+	})
+}
+// 更新transfer
+export const updateTransferRescord = (data) => {
+	return request({
+		url: "/clientDam/flash/updateTransferRescord",
+		method: "post",
+		data
+	})
+}

@@ -330,6 +330,22 @@
 			"style": {
 				"navigationBarTitleText": "DAM"
 			}
+		},
+		{
+			"path" : "pages/flash/flash",
+			"style" : 
+			{
+				"navigationBarTitleText" : "Flash Convert",
+				"enablePullDownRefresh" : false
+			}
+		},
+		{
+			"path" : "pages/wusdt/flash",
+			"style" : 
+			{
+				"navigationBarTitleText" : "Cross-Chain Transfer",
+				"enablePullDownRefresh" : false
+			}
 		}
 	],
 	"globalStyle": {

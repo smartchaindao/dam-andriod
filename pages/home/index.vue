@@ -38,13 +38,38 @@
 				<image class="ic" src="../../images/ic_a4.png" mode="aspectFit"></image>
 				<view class="val">Device</view>
 			</view>
+			<navigator hover-class="none" url="../flash/flash" class="item">
+				<image class="ic" src="../../images/flask.png" mode="aspectFit"></image>
+				<view class="val">Falsh</view>
+			</navigator>
 		</view>
 		<view class="list-box">
 			<view class="hd">
 				<view class="txt">Assets</view>
 			</view>
 			<view class="bd" style="padding-bottom: ;">
-				<view class="val">{{blance}} HPC</view>
+				<view class="row">
+					<view class="row w-6">
+						<view class="label">
+							HPC
+						</view>
+					</view>
+					<view class="ml-3">
+						{{blance}}
+					</view>
+					 
+				</view>
+				<view class="row">
+					<view class="row w-6">
+						<view class="label">
+							WUSDT
+						</view>
+						<image src="../../images/flask.png" mode="" class="flask" @click="navigateToWusdt"></image>
+					</view>
+					<view class="ml-3">
+						{{WUSDT}}
+					</view>
+				</view>
 			</view>
 			<view class="bd" v-if="false">
 				<navigator url="" hover-class="none" class="item" v-for="(item,index) in 3" :key="index">
@@ -97,6 +122,7 @@
 	} from "@/request/serverV1.js"
 	const Web3 = require('web3')
 	let web3;
+	let contract;
 	export default {
 		components: {
 			loginOut
@@ -108,7 +134,8 @@
 				showLoginOut: false,
 				cut_address: "",
 				blance: "",
-				has_device: false
+				has_device: false,
+				WUSDT: ""
 			};
 		},
 		computed: {
@@ -128,28 +155,56 @@
 			this.userList = user
 			const userCur = this.userList[this.accountIndex]
 			this.cut_address = userCur.address.substr(0, 15) + "....";
+			const abi = [{
+				"inputs": [{
+					"internalType": "address",
+					"name": "account",
+					"type": "address"
+				}],
+				"name": "balanceOf",
+				"outputs": [{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}],
+				"stateMutability": "view",
+				"type": "function"
+			}]
 			web3 = new Web3(new Web3.providers.HttpProvider(this.eth_url));
+			contract = new web3.eth.Contract(abi, this.contract_address.WUSDT)
+			try{
+				const result= await contract.methods.balanceOf(userCur.address).call()
+				this.WUSDT =web3.utils.fromWei(result, "ether")
+			}catch(e){
+				//TODO handle the exception
+			}
+			
 			const blance = await web3.eth.getBalance(userCur.address)
 			this.blance = web3.utils.fromWei(blance, "ether")
 			const [err, res] = await deviceInfo({
 				address: userCur.address
 			})
 			// 默认没有数据就是没有设备
-			if (!res.data) return
+			if (err) return
 			this.has_device = true
 		},
 		async onPullDownRefresh() {
-			const userCur = this.userList[this.accountIndex]
-			const blance = await web3.eth.getBalance(userCur.address)
-			this.blance = web3.utils.fromWei(blance, "ether")
-
+			await this.getUserBalance()
 			uni.stopPullDownRefresh()
 		},
-
 		onPageScroll() {
 			console.log(onPageScroll);
 		},
 		methods: {
+			async getUserBalance(){
+				const userCur = this.userList[this.accountIndex]
+				contract.methods.balanceOf(userCur.address).call().then(result => {
+					this.WUSDT = web3.utils.fromWei(result, "ether")
+					console.log(result, "result")
+				})
+				const blance = await web3.eth.getBalance(userCur.address)
+				this.blance = web3.utils.fromWei(blance, "ether")
+			},
 			changeAccount(e) { //切换账户
 				this.accountIndex = e.detail.value;
 				this.cut_address = this.userList[this.accountIndex].address.substr(0, 15) + "....";
@@ -204,6 +259,11 @@
 						url: "../device/index"
 					});
 				}
+			},
+			navigateToWusdt(){
+				uni.navigateTo({
+					url:"/pages/wusdt/flash"
+				})
 			}
 		},
 		onNavigationBarButtonTap(e) {
@@ -214,7 +274,8 @@
 					url: "../setting/index"
 				})
 			}
-		}
+		},
+		
 	};
 </script>
 
@@ -424,4 +485,21 @@
 			}
 		}
 	}
+	.row{
+		display: flex;
+		height: 40px;
+		align-items: center;
+	}
+	.flask{
+		width: 40rpx;
+		height: 40rpx;
+	}
+	.w-6{
+		width: 160rpx;
+		justify-content: space-between;
+	}
+	.ml-3{
+		margin-left: 30rpx;
+	}
+	
 </style>

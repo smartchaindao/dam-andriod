@@ -11,6 +11,7 @@ export const request = (options) => {
 			url,
 			method: method || "post",
 			data,
+			sslVerify:false,
 			success: (res) => {
 				const {
 					data
@@ -18,7 +19,7 @@ export const request = (options) => {
 				if (data.code === 0) {
 					resolve([null, res.data])
 				} else {
-					resolve([data.msg])
+					resolve([data.msg,res.data])
 				}
 
 			},

@@ -152,13 +152,13 @@
 					amount: this.amount,
 					status: 'Submitted'
 				};
-				
-				const gasLimit=await web3.eth.estimateGas({
-					from:account.address,
+
+				const gasLimit = await web3.eth.estimateGas({
+					from: account.address,
 				})
-				
-				console.log(gasLimit,"gasLimit")
-				
+
+				console.log(gasLimit, "gasLimit")
+
 				let transactionObject = {
 					//from:account.address,
 					to: this.toAddress, //that.toAddress,
@@ -168,7 +168,7 @@
 					nonce: nonce,
 					value: web3.utils.toWei(this.amount, "ether")
 				};
-				console.log(transactionObject)
+				console.log(transactionObject, "----------")
 				let sign, result_send;
 				// 签名
 				try {
@@ -210,7 +210,7 @@
 						hash: result_send.transactionHash,
 						fromAddress: account.address,
 						toAddress: this.toAddress,
-						ifiAmount: this.amount,
+						amount: this.amount,
 						timestamp: log.cdate.toString().substring(0, 10)
 					})
 					this.$refs.popup.open('bottom');
